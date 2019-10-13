@@ -1,0 +1,12 @@
+<%= form_for([@message,@message.comments.build]) do |form| %>
+
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

@@ -1,0 +1,7 @@
+<p><%= comment.content %></p>
+<!-- Add an edit & delete link for each comment -->
+
+<!-- In the link to below, comment.message corresponds to the message the comments are for,
+and comment represents the individual comment (remember we are in the partial for single comments.)-->
+<%= link_to("Edit", edit_message_comment_path(comment.message, comment)) %>
+<%= link_to("Delete", message_comment_path(comment.message, comment), method: :delete, data: { confirm: "Are you sure?" }) %>
