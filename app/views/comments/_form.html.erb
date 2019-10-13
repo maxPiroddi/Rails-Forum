@@ -1,12 +1,13 @@
 <%= form_for([@message,@message.comments.build]) do |form| %>
 
   <div>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
   </div>
-
+  <br>
   <div>
-    <%= form.submit %>
+    <%= form.button :submit, :class => "btn-custom" %>
   </div>
+  <br>
 
 <% end %>
