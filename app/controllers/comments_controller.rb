@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
     before_action :find_message
     before_action :find_comment, only: [:edit, :update, :destroy]
+    # Redirect non-logged to sign in page if attempting to create comment
+    before_action :authenticate_user!, except: [:index, :show]
+
 
     def create
         # Then we create a comment with respect to said message
@@ -27,7 +30,8 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-
+        @comment.destroy
+        redirect_to message_path(@message)
     end
 
     private
